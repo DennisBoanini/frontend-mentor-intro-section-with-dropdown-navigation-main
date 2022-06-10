@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700");
+
+* {
+    font-size: 18px;
+    font-family: Epilogue, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: hsl(0, 0%, 98%);
+    height: 100vh;
+}
+
+button {
+    cursor: pointer;
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 15px;
+}
+
+.navbar {
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.navbar>.sections {
+    width: 50%;
+    margin-left: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sections>.item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.hide { display: none; }
+
+.sections>.item>img {
+    width: 12px;
+    height: 8px;
+    margin-left: 8px;
+}
+
+.sections>a, .sections>.item>a {
+    text-decoration: none;
+    color: hsl(0, 0%, 41%);
+    font-size: 15px;
+}
+
+.navbar>.sections>a,
+.navbar>.sections>.item>.dropdown-content>a,
+.navbar>.sections>.item>.dropdown-content>div>a {
+    text-decoration: none;
+    color: hsl(0, 0%, 41%);
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.navbar>.sections>.item>.dropdown-content>div>a { margin-left: 10px; }
+
+.navbar>.sections>.item>.dropdown-content>.dropdown-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.sections>.item>a:hover, .sections>a:hover {
+    color: hsl(0, 0%, 8%);
+}
+
+.navbar>.user {
+    display: flex; flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 25px;
+}
+
+.navbar>.user>.login, .navbar>.user>.register>p { font-size: 15px; }
+
+.user>.login {
+    border: none;
+    color: hsl(0, 0%, 41%);
+    cursor: pointer;
+    margin-right: 35px;
+}
+
+.user>.register {
+    border: solid 2px hsl(0, 0%, 41%);
+    border-radius: 15px;
+    color: hsl(0, 0%, 41%);
+    cursor: pointer;
+    width: 100px;
+    text-align: center;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.user>.register:hover {
+    border: solid 2px hsl(0, 0%, 8%);
+    border-radius: 15px;
+    color: hsl(0, 0%, 8%);
+}
+
+.user>.login:hover {
+    border: none;
+    color: hsl(0, 0%, 8%);
+    background-color: white;
+}
+
+.hamburger { display: none; }
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+}
+
+.container>.right>.mobile { display: none; }
+.container>.right {
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.container>.right>.desktop { max-height: 92%; }
+
+.container>.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 55%;
+}
+
+.text>p {
+    margin: 8px 0;
+}
+
+.sponsors {
+    margin-top: 10%;
+    width: 65%;
+}
+
+.sponsors>img:not(:first-child) {
+    margin-left: 25px;
+}
+
+.learn-more-btn {
+    background-color: hsl(0, 0%, 8%);
+    color: hsl(0, 0%, 98%);
+}
+
+.learn-more-btn:hover {
+    background-color: hsl(0, 0%, 98%);
+    color: hsl(0, 0%, 8%);
+}
+
+.container>.left>.left-content { margin-left: 10%; margin-top: 20%; }
+
+.container>.left>.left-content>.text {
+    color: hsl(0, 0%, 41%);
+    margin: 6% 0;
+    width: 65%;
+    line-height: 25px;
+}
+
+.container>.left>.left-content>.slogan { width: 80%; }
+.container>.left>.left-content>.slogan>p {
+    font-size: 84px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.sidepanel { display: none; }
+
+@media only screen and (max-width: 400px) {
+    body { display: table; }
+    .navbar { padding: 0 25px; }
+    .navbar>.sections { display: none; }
+    .navbar>.user { display: none; }
+
+    .navbar>.hamburger {
+        flex-direction: column;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: flex-end;
+        display: flex;
+    }
+
+    .navbar>.hamburger>div {
+        width: 35px;
+        height: 2px;
+        background-color: hsl(0, 0%, 8%);;
+        margin: 3px 0;
+    }
+
+    .container {
+        margin-top: 5%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .container>.left {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .container>.left>.left-content>.slogan { width: 100%; }
+    .container>.left>.left-content>.slogan>p { font-size: 38px; font-weight: bold; }
+    .container>.left>.left-content>.text { width: unset; }
+    .container>.left>.left-content>.text>p { line-height: 30px; }
+    .container>.left>.left-content>.sponsors { width: 100%; display: flex; flex-direction: row; justify-content: space-evenly; }
+    .container>.left>.left-content>.sponsors>img { margin: unset; max-height: 20px; max-width: 85px; }
+    .container>.left>.left-content { margin-left: 0; margin-top: 10%; }
+
+    .container>.right { width: unset; }
+    .container>.right>.desktop { display: none; }
+    .container>.right>.mobile {
+        display: unset;
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .sidepanel  {
+        display: unset;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background-color: hsl(0, 0%, 98%);
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
+    .sidepanel.sidepanel-shadow { box-shadow: 0 0 0 1000px hsla(0, 0%, 8%, 0.8); }
+    .sidepanel>.sidenav-close { text-align: end; padding: 20px; }
+    .sidepanel>.sections { margin-left: 20px; }
+    .sidepanel>.user { text-align: center; margin-top: 15%; }
+
+    .user>.login { margin-right: unset; }
+    .user>.register { width: unset; margin: 0 15px; }
+
+    .features-section, .company-section {
+        overflow:hidden;
+        transition:height 0.3s ease-out;
+        height:auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        margin-left: 10%;
+    }
+
+    .features>span, .company>span, .careers, .about {
+        font-size: 16px;
+        color: hsl(0, 0%, 41%);
+        text-decoration: none;
+    }
+
+    .hide { display: none; }
+
+    .about { margin-top: 10%; }
+
+    .dropdown-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .dropdown-item .icon {
+        width: 18px;
+    }
+
+    .label {
+        font-size: 16px;
+        color: hsl(0, 0%, 41%);
+        text-decoration: none;
+        margin-left: 12px;
+    }
+
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 15px 15px 15px 20px;
+    overflow: auto;
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
+    z-index: 1;
+    right: 1px;
+    top: 40px;
+    border-radius: 15px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.show {display: block;}
